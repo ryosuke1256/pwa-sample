@@ -1,0 +1,24 @@
+{
+  "name": "PWA example",
+  "short_name": "PWA",
+  "description": "Webサイトの説明",
+  "start_url": "/",
+  "scope": "/",
+  "theme_color": "#444444",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "orientation": "any",
+  "lang": "ja-jp",
+  "icons": [
+    {
+      "src": "game.ico",
+      "sizes": "192x192",
+      "type": "images"
+    },
+    {
+      "src": "pika500×500.jpg",
+      "sizes": "512x512",
+      "type": "images"
+    }
+  ]
+}
