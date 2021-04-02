@@ -2,4 +2,5 @@
 ↓↓↓ 　マスクアイコン使ってみた version  
 [マスクアイコン version](https://github.com/ryosuke1256/pwa-sample/tree/maskable)
 
+#### マスクアイコンを使ってないバージョン  
 <img src="https://github.com/ryosuke1256/image/blob/main/pwa3.png" />
