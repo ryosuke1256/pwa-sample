@@ -1,4 +1,4 @@
-マスクアイコン使うと Chrome のマークが消えないから微妙かも。。  
+マスクアイコン使うと ホーム画面に落とした時に Chrome のマークが消えないから微妙かも。。  
 ↓↓↓ 　マスクアイコン使ってみた version  
 [マスクアイコン version](https://github.com/ryosuke1256/pwa-sample/tree/maskable)
 
