@@ -1,60 +1,27 @@
-/*
- * @license
- * Your First PWA Codelab (https://g.co/codelabs/pwa)
- * Copyright 2019 Google Inc. All rights reserved.
- * Licensed under the Apache License, Version 2.0 (the "License");
- */
-'use strict';
+//cacheの名前は任意
+const CACHE_NAME = 'static';
+//cacheに追加するもののpath
+const CachePaths = ['./', './src/stylesheet.css', './images/logo192.png', 'src/index.js'];
 
-// CODELAB: Update cache names any time any of the cached files change.
-const CACHE_NAME = 'static-cache-v1';
-
-// CODELAB: Add list of files to cache here.
-const FILES_TO_CACHE = ['/offline.html'];
-
-self.addEventListener('install', (evt) => {
-  console.log('[ServiceWorker] Install');
-  // CODELAB: Precache static resources here.
-  evt.waitUntil(
+//installした時
+self.addEventListener('install', (e) => {
+  e.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
-      console.log('[ServiceWorker] Pre-caching offline page');
-      return cache.addAll(FILES_TO_CACHE);
+      //キャッシュに追加
+      return cache.addAll(CachePaths);
     })
   );
-  self.skipWaiting();
 });
-
-self.addEventListener('activate', (evt) => {
-  console.log('[ServiceWorker] Activate');
-  // CODELAB: Remove previous cached data from disk.
-  evt.waitUntil(
-    caches.keys().then((keyList) => {
-      return Promise.all(
-        keyList.map((key) => {
-          if (key !== CACHE_NAME) {
-            console.log('[ServiceWorker] Removing old cache', key);
-            return caches.delete(key);
-          }
-        })
-      );
-    })
-  );
-
-  self.clients.claim();
-});
-
-self.addEventListener('fetch', (evt) => {
-  console.log('[ServiceWorker] Fetch', evt.request.url);
-  // CODELAB: Add fetch event handler here.
-  if (evt.request.mode !== 'navigate') {
-    // Not a page navigation, bail.
-    return;
-  }
-  evt.respondWith(
-    fetch(evt.request).catch(() => {
-      return caches.open(CACHE_NAME).then((cache) => {
-        return cache.match('offline.html');
-      });
+//fetchしてきた時
+self.addEventListener('fetch', (e) => {
+  console.log(`fetchリクエスト: ${e.request.url}`);
+  e.respondWith(
+    //match 正規表現e.requestで文字列を検索し、合致した部分文字列を取得
+    //promise.then(success,failure)
+    caches.match(e.request).then((response) => {
+      console.log(response);
+      return response ? response : fetch(e.request);
+      // return response || fetch(e.request);
     })
   );
 });

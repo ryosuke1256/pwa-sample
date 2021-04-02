@@ -3,9 +3,9 @@
   "short_name": "PWA",
   "start_url": "/",
   "scope": "/",
-  "background_color": "#ffffff",
-  "theme_color": "#009578",
   "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#748cf7",
   "orientation": "any",
   "lang": "ja-jp",
   "icons": [
