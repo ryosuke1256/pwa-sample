@@ -1,5 +1,4 @@
-**参考**  
-https://web.dev/maskable-icon-audit/?utm_source=lighthouse&utm_medium=devtools  
+[**参考**](https://web.dev/maskable-icon-audit/?utm_source=lighthouse&utm_medium=devtools)  
 
 manifest.jsonが異なる、後マスクアイコンを準備しておく  
 
