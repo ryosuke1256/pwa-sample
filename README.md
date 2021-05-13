@@ -1,8 +1,5 @@
-### 検証  
-#### Android  
-- マスクアイコン使うと ホーム画面に落とした時に、Chrome のマークが残ってしまう  
-#### IPhone(iOS14.4)  
-- マスクアイコンを使うと、ホーム画面に落とした時に、縁まで埋まる  
+#### マスクアイコン  
+- 新しいAndroidデバイスでは、マスク可能なアイコン形式に従わないPWAアイコンの背景が白になるらしい。ただ、わいのAndroidのデバイスとChromeではホーム画面に落とした時に、Chrome のマークが残った。      
 
 
 [**マスクアイコン使ってみた version**](https://github.com/ryosuke1256/pwa-sample/tree/maskable)
